@@ -1,7 +1,10 @@
 <script src="/socket.io/socket.io.js"></script>
 <script>
   var socket = io.connect('http://localhost:3000');
-    socket.on('begin', function (data) {
-      console.log(data);
+  socket.on('begin', function (data) {
+    console.log(data.text);
+  });
+  socket.on('story', function (data) {
+    console.log('new story ' + data.text)
   });
 </script>
